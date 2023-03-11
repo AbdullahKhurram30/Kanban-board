@@ -1,0 +1,215 @@
+.page {
+    background-color: #336481;
+    width: 100%;  
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+.html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;  
+}
+
+body  {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;  
+    overflow: hidden;
+}
+
+.rectangle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'helvetica neue';
+}
+.head_text {
+    font-size: 2.5rem;
+    background-color: #3D8133;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    margin: auto;
+}
+.board {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 5px;
+    font-family: 'helvetica neue';
+    text-align: center;
+}
+.column {
+    padding: 1rem;
+    width: 30%;
+    min-width: 15rem;
+    min-height: 20rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    color: black;
+}
+.column_title {
+    font-size: 1.5rem;
+    background-color: #773381;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    margin: 0;
+    text-align: center;
+}
+.task {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.2rem 0.2rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+}
+.input {
+    display: inline-block;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background: #815033;
+    width: 70%;
+    word-wrap: break-word;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input {
+    display: inline-block;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background: #815033;
+    color: black;
+    width: 100px;
+    word-wrap: break-word;
+    border-radius: 5px;
+    cursor: text;
+    text-align: center;
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+.add_task {
+    background-color: #815033;
+    color: rgb(6, 6, 6);
+    padding: 5px 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;
+    font-family: 'helvetica neue';
+    margin: auto;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+.add_task:hover {
+    background-color: #773381;
+    color: white;
+}
+.move_task_forward {
+    background-color: #773381;
+    color: white;
+    border: 3px solid #773381;
+}
+.move_task_forward:hover {
+    background-color: black;
+    color: white;
+}
+
+.move_task_backward {
+    background-color: #773381;
+    color: white;
+    border: 3px solid #773381;
+}
+.move_task_backward:hover {
+    background-color: black;
+    color: white;
+}
+
+.delete_task {
+    background-color: rgb(91, 11, 11);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-family: 'helvetica neue';
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+.delete_task:hover {
+    background-color: #af1010;
+    color: white;
+}
+.form_1 {
+    margin: auto;
+    width: 300px;
+    padding: 1.2rem;
+    border: 1px solid #0a0a0a;
+    border-radius: 1em;
+}
+
+form li + li {
+    margin-top: 0.5em;
+}
+
+label {
+    display: Center;
+    width: 100px;
+    text-align: Center;
+    font-family: 'helvetica neue';
+}
+
+input, textarea {
+    font-family: 'helvetica neue';
+    width: 250px;
+    box-sizing: border-box;
+    border: 1px solid #773381;
+}
+
+textarea {
+    vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}
+
+.form_2 {
+    float: left;
+}
+
+input:focus, textarea:focus {
+    border-color: #773381;
+}
+
+a {
+    display: inline-block;
+    padding: 5px 15px;
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: #773381;
+}
+a:hover {
+    background-color: #773381;
+    color: black
+}
+
+#ToDo {
+    background-color: #773381;
+}
+#InProgress {
+    background-color: #773381;
+}
+#Done {
+    background-color: #773381;
+}

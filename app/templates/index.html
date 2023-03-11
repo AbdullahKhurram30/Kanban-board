@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Kanban Board</title>
+    
+    <link href="../static/board.css" rel="stylesheet" type="text/css">
+</head>
+<body style="margin:0">
+    <div class="page">
+        <a href="{{ url_for('logout') }}" class="link">Log Out</a>
+        <div class="rectangle">
+            {% if user %}
+                <strong class="head_text">{{user}}'s Kanban board</strong>
+            {% else %}
+                <strong class="head_text">Kanban board</strong>
+            {% endif %}
+        </div>
+        <div>
+            <form class="form_1" method="POST" action="/add_task">
+                <input type="text" name="name" placeholder="Task name" required>
+                <button class="add_task">Add</button>
+            </form>
+        </div>
+        <div class="board">
+            <div class="column" id="ToDo">
+                <div class="column_title">
+                    <strong>To Do</strong>
+                </div>
+                {% for task in to_do %}
+                <div class="task" id="To_Do">
+                    <div class="input">{{task.name}}</div>
+                    <form class="form_2" method="POST" action="/delete">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="delete_task">Delete</button>
+                    </form>
+                    <form class="form_2" method="POST" action="/update_to_next">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="move_task_forward">&#9755;</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="column" id="InProgress">
+                <div class="column_title">
+                    <strong>In Progress</strong>
+                </div>
+                {% for task in in_progress %}
+                <div class="task" id="In_Progress">
+                    <form class="form_2" method="POST" action="/update_to_previous">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="move_task_backward">&#9754;</button>
+                    </form>
+                    <div class="input">{{task.name}}</div>
+                    <form class="form_2" method="POST" action="/delete">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="delete_task">Delete</button>
+                    </form>
+                    <form class="form_2" method="POST" action="/update_to_next">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="move_task_forward">&#9755;</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="column" id="Done">
+                <div class="column_title">
+                    <strong>Done</strong>
+                </div>
+                {% for task in done %}
+                <div class="task" id="done">
+                    <form class="form_2" method="POST" action="/update_to_previous">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="move_task_backward">&#9754;</button>
+                    </form>
+                    <div class="input">{{task.name}}</div>
+                    <form class="form_2" method="POST" action="/delete">
+                        <input type="hidden" name="id" value="{{task.id}}">
+                        <button class="delete_task">Delete</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
